@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Zadanie 2</title>
     <link rel="stylesheet" href="dist/css/style.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="src/jquery.touchSwipe.js"></script>
 </head>
 
 <body>
@@ -34,7 +37,7 @@
 
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <div class="modal-header">
+                    <div class="modal-header" id="modal-header">
                         <h2>Modal Header</h2>
                     </div>
                     <div class="modal-body">
@@ -48,7 +51,7 @@
             </div>
         </div>
     </main>
-    
+
     <script>
         var modal = document.getElementById('myModal');
 
@@ -69,6 +72,18 @@
                 modal.style.display = "none";
             }
         }
+
+        $(function () {
+            $("#myModal").swipe({
+                swipe: function (event, direction, distance, duration, fingerCount) {
+                    $(this).text("You swiped " + direction + " for " + distance + "px");
+                },
+                threshold: 100
+            });
+
+            //Set some options later
+            $("#myModal").swipe({ fingers: 2 });
+        });
     </script>
 
     <script src="dist/js/app.min.js"></script>

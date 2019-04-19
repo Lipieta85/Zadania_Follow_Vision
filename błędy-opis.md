@@ -3,7 +3,6 @@
 3. Podtytuły zgodnie z tym, co można przeczytać w specyfikacji, powinny być oznaczane przy pomocy p, tudzież h* > span.
 4. Nagłówki powinny być po kolei, zatem najpierw h1, potem h2, h3 itd.
 5. Można się pokusić o serwowanie CSS, JS z CDN. Jest to jedno z zaleceń Google odnośnie szybkości wczytywania stron.
-6. Brak <!DOCTYPE html>.
+
 
 Więcej grzechów nie pamiętam ;)
-PS: Pracuję jeszcze nad dodaniem swipa, postarm się przesłać w Piątek
