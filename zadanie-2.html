@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie 2</title>
+    <link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <header class="text-center mt-5 mb-5">
+                        <h1>Zadanie 2</h1>
+                    </header>
+                    <p class="task2-desc">Zaimplementuj obsługę przycisku, tak aby po kliku otwierał się modal z
+                        informacją tekstowa oraz
+                        przyciskiem zamykajacym modal.</p>
+                    <p class="task2-desc">Bonus: Dodaj obsługę zamykania modala po kliknieciu w obszar poza modalem oraz
+                        po przesunieciu
+                        (swipe) modalu na urządzeniu mobilnym.</p>
+                    <br />
+                    <button id="open-modal" type="button" class="btn btn-primary">Launch modal</button>
+                </div>
+            </div>
+        </div>
+        <!-- Rozwiązanie zadania umieść poniżej tego komentarza -->
+        <div id="myModal" class="modal">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-header">
+                        <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Lorem ipsum dolor sit amet</p>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        var modal = document.getElementById('myModal');
+
+        var btn = document.getElementById("open-modal");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script src="dist/js/app.min.js"></script>
+</body>
+
+</html>
