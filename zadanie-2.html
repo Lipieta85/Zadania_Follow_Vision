@@ -55,33 +55,31 @@
 
     <script>
 
-        var modal = document.getElementById("myModal");
+        const modal = $("#myModal");
+        
+        $("#open-modal").click(function () {
+            modal.css("display", "block")
+        });
 
-        var btn = document.getElementById("open-modal");
+        $(".close").click(function () {
+            modal.css("display", "none")
+        })
 
-        var span = document.getElementsByClassName("close")[0];
-
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+        $(window).click(function (event) {
+            var target = $( event.target );
+            if ( target.is(modal) ) {
+                modal.css("display", "none")
             }
-        }
+        })
 
-        $("#myModal").swipe({
+        $(".modal-content").swipe({
             swipe: function (event, direction, distance, duration, fingerCount) {
                 $("#text").text("You swiped " + direction + " for " + distance + "px");
+                modal.slideUp()
             },
             threshold: 5
         });
-
+        
     </script>
 
     <script src="dist/js/app.min.js"></script>
