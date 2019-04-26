@@ -26,6 +26,7 @@
                     <p class="task2-desc">Bonus: Dodaj obsługę zamykania modala po kliknieciu w obszar poza modalem oraz
                         po przesunieciu
                         (swipe) modalu na urządzeniu mobilnym.</p>
+                    <p id="text"></p>
                     <br />
                     <button id="open-modal" type="button" class="btn btn-primary">Launch modal</button>
                 </div>
@@ -53,7 +54,8 @@
     </main>
 
     <script>
-        var modal = document.getElementById('myModal');
+
+        var modal = document.getElementById("myModal");
 
         var btn = document.getElementById("open-modal");
 
@@ -73,17 +75,13 @@
             }
         }
 
-        $(function () {
-            $("#myModal").swipe({
-                swipe: function (event, direction, distance, duration, fingerCount) {
-                    $(this).text("You swiped " + direction + " for " + distance + "px");
-                },
-                threshold: 100
-            });
-
-            //Set some options later
-            $("#myModal").swipe({ fingers: 2 });
+        $("#myModal").swipe({
+            swipe: function (event, direction, distance, duration, fingerCount) {
+                $("#text").text("You swiped " + direction + " for " + distance + "px");
+            },
+            threshold: 5
         });
+
     </script>
 
     <script src="dist/js/app.min.js"></script>
